@@ -27,10 +27,9 @@ IF EXIST "%server-map%\mapped.txt" (echo Backing Up!) ELSE (goto failed)
 REM In. -- Make Folders
 MD %server-map%\servers\%date:~10%
 MD %server-map%\servers\%date:~10%\%date:~7,2%
-MD %server-map%\servers\%date:~10%\%date:~7,2%\%date:~4,2%
 cls
 REM Out. -- Make Folders
-XCOPY "*"/S /R /V /Y /D /Z /C "%server-map%\servers\%date:~10%\%date:~7,2%\%date:~4,2%\"
+XCOPY "*"/S /R /V /Y /D /Z /C "%server-map%\servers\%date:~10%\%date:~7,2%\"
 pause
 type NUL > %server-map%\logs\backup-finished--%date:~4,2%-%date:~7,2%-%date:~-2,2%.txt
 echo Backup Finished at %time:~0,-6%
